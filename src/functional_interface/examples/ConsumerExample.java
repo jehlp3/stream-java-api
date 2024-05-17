@@ -14,13 +14,14 @@ public class ConsumerExample {
         //Criando uma lista de números inteiros
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
 
+        //Usar o Consumer com expressão lambda para imprimir números pares
         Consumer<Integer> imprimirNumerosPares = numero -> {
             if (numero % 2 == 0) {
                 System.out.println(numero);
             }
         };
         numeros.stream()
-                .filter(n -> n % 2 == 0)
+                .filter(n -> n % 2 == 0) //filter é Predicate
                 .forEach(System.out::println);
     }
 
